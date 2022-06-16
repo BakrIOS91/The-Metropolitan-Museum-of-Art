@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct MMOAApp: App {
+    
+    init(){
+        NetworkMonitor.shared.startMonitoring()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
     }
 }

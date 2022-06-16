@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  MMOA
+
+  Created by Bakr mohamed on 16/06/2022.
+  
+*/
+
+//MARK: Genral Local
+"welcome" = "Willkommen";
+"to" = "zu";
+"mmoa" = "Metropolitan Museum of Art";
+"retry" = "Wiederholen";
+
+// MARK: - Error Views
+"noDataFound" = "Keine Elemente zum Anzeigen";
+"youAreOffline" = "Sie sind offline";
+"pleaseCheckYourInternetConnections" = "Bitte überprüfen Sie Ihre Internetverbindung";
+"serverError" = "Serverfehler";
+"unexpectedError" = "Fehler aufgetreten";
+"pleaseTryAgainLater" = "Bitte versuchen Sie es später erneut";
+"unableToLoadThePageServerSentNoData" = "Server hat keine Daten gesendet";
+"notAuthorized" = "Nicht autorisiert";
+"youAreNotAuthorized" = "Sie sind nicht berechtigt, auf diese Seite zuzugreifen";
+
+
+// MARK: Language Selection
+"pleaseChooseLanguage" = "Bitte wählen Sie Ihre gewünschte Sprache";
+"en" = "Englisch";
+"de" = "Deutsch";
+
+
+
+
+
+
