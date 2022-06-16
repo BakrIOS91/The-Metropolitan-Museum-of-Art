@@ -43,7 +43,6 @@
 		3C8DB086285B6F6F0067753C /* LanguageSelectionVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8DB085285B6F6E0067753C /* LanguageSelectionVIew.swift */; };
 		3C8DB08D285B89CB0067753C /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8DB08C285B89CB0067753C /* AppRootView.swift */; };
 		3C8DB095285B9B760067753C /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8DB094285B9B760067753C /* UserDefaults.swift */; };
-		3C8DB097285B9C180067753C /* OptionalExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8DB096285B9C180067753C /* OptionalExtention.swift */; };
 		BE0B9122818B6C639018A141 /* Pods_MMOA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392E93DBDAC58C42A81DF91A /* Pods_MMOA.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +89,6 @@
 		3C8DB085285B6F6E0067753C /* LanguageSelectionVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionVIew.swift; sourceTree = "<group>"; };
 		3C8DB08C285B89CB0067753C /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
 		3C8DB094285B9B760067753C /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
-		3C8DB096285B9C180067753C /* OptionalExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtention.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,7 +251,6 @@
 				3C8DB04F285B29510067753C /* UIImageExtention.swift */,
 				3C8DB050285B29510067753C /* StringExtension.swift */,
 				3C8DB076285B34760067753C /* LocalExtension.swift */,
-				3C8DB096285B9C180067753C /* OptionalExtention.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -494,7 +491,6 @@
 				3C8DB058285B29510067753C /* AppEnums.swift in Sources */,
 				3C8DB069285B2A090067753C /* SplashView.swift in Sources */,
 				3C8DB05F285B29510067753C /* StringExtension.swift in Sources */,
-				3C8DB097285B9C180067753C /* OptionalExtention.swift in Sources */,
 				3C8DB062285B29510067753C /* BaseViewModel.swift in Sources */,
 				3C8DB05A285B29510067753C /* ErrorView.swift in Sources */,
 				3C8DB05E285B29510067753C /* UIImageExtention.swift in Sources */,
