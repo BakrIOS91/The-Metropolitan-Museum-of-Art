@@ -2,35 +2,12 @@
 //  UserDefaults.swift
 //  MMOA
 //
-//  Created by Bakr mohamed on 16/06/2022.
+//  Created by Bakr mohamed on 17/06/2022.
 //
 
 import Foundation
 import Combine
 
-//Inspired : https://www.avanderlee.com/swift/appstorage-explained/
-/**
- User default property wrapper
- 
- If accessing just getter / setter use as simple property.
- In case you need to access get and set at the same time, use mutate function.
- 
- An example of usage
- ````
-    struct MyStruct {
-        @UserDefault("Example")
-        var x: Int = 0
- 
-        mutating func incrementNoneAtomic() {
-            x += 1 // ❌ This is not atomic
-        }
- 
-        mutating func incrementAtomic() {
-            $x.mutate { $0 += 1 } // ✅ Atomic operation
-        }
-    }
- ````
- */
 @propertyWrapper
 public final class UserDefault<Value: Codable> {
     private let queue = DispatchQueue(label: "atomicUserDefault")
@@ -94,11 +71,11 @@ public final class UserDefault<Value: Codable> {
             container.removeObject(forKey: key)
         } else {
             let data = try? JSONEncoder().encode(newValue)
-           container.setValue(data, forKey: key)
+            container.setValue(data, forKey: key)
         }
         valueSubject.send(newValue)
     }
-
+    
 }
 
 public extension UserDefault where Value: ExpressibleByNilLiteral {

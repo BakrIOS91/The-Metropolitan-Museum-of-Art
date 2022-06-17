@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SplashView: View {
+    @Preference(\.rootView) var rootView
+    
     var body: some View {
         VStack(spacing: 10) {
             Text("welcome")
@@ -19,8 +21,8 @@ struct SplashView: View {
         }
         .padding()
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                setAppRootView(view: LanguageSelectionVIew())
+            wait(2) {
+                rootView = .language
             }
         }
     }

@@ -6,18 +6,22 @@
 //
 
 import Foundation
+import SwiftUI
 
-
-enum AppLanguage: Equatable {
-    case english
-    case deutsch
+enum RootView: Codable {
+    case splash
+    case language
+    case home
     
-    var laungageCode: String {
+    @ViewBuilder
+    func getRootView() -> some View {
         switch self {
-        case .english:
-            return "en"
-        case .deutsch:
-            return "de"
+        case .splash:
+            SplashView()
+        case .language:
+            LanguageSelectionVIew()
+        case .home:
+            SplashView()
         }
     }
 }

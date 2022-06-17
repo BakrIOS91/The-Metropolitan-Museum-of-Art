@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct LanguageSelectionVIew: View {
+    @Preference(\.locale) var locale
     
     var body: some View {
         VStack(spacing: 10){
             Text("pleaseChooseLanguage")
-                .padding()
-            
             HStack(spacing: 10){
                 ForEach(Locale.appSupported, id: \.self) { locale in
                     Button {
-                        
+                        updateAppLanguage(locale: locale)
                     } label: {
                         Text("\(locale.languageCode ?? "")".localizedStringKey)
                     }
                     .frame(maxWidth: .infinity, maxHeight: 40)
                     .background(Color.blue)
                     .foregroundColor(.white)
-                    .cornerRadius(20)
+                    .cornerRadius(5)
+                    
                 }
                 
             }
@@ -33,6 +33,11 @@ struct LanguageSelectionVIew: View {
         }
         .font(AppFont.mediumWithSize18)
         .padding()
+    }
+    
+    func updateAppLanguage(locale: Locale){
+        self.locale = locale
+        Bundle.setLanguage(language: locale.languageCode ?? "")
     }
 }
 
