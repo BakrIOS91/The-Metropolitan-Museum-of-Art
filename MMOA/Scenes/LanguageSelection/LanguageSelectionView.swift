@@ -1,5 +1,5 @@
 //
-//  LanguageSelectionVIew.swift
+//  LanguageSelectionView.swift
 //  MMOA
 //
 //  Created by Bakr mohamed on 16/06/2022.
@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct LanguageSelectionVIew: View {
+struct LanguageSelectionView: View {
     @Preference(\.locale) var locale
+    @Preference(\.rootView) var rootView
     
     var body: some View {
         VStack(spacing: 10){
@@ -38,13 +39,14 @@ struct LanguageSelectionVIew: View {
     func updateAppLanguage(locale: Locale){
         self.locale = locale
         Bundle.setLanguage(language: locale.languageCode ?? "")
+        rootView = .home
     }
 }
 
 struct LanguageSelectionVIew_Previews: PreviewProvider {
     static var previews: some View {
         LocalePreview{
-            LanguageSelectionVIew()
+            LanguageSelectionView()
         }
     }
 }

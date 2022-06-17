@@ -19,9 +19,9 @@ enum RootView: Codable {
         case .splash:
             SplashView()
         case .language:
-            LanguageSelectionVIew()
+            LanguageSelectionView()
         case .home:
-            SplashView()
+            TabBarView()
         }
     }
 }

@@ -29,7 +29,9 @@
 "en" = "Englisch";
 "de" = "Deutsch";
 
-
+// MARK: Tab Bar
+"home" = "Home";
+"settings" = "Einstellungen";
 
 
 

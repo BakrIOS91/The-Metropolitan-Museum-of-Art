@@ -29,3 +29,8 @@
 "pleaseChooseLanguage" = "Please choose your desired language";
 "en" = "English";
 "de" = "Deutsch";
+
+
+// MARK: Tab Bar
+"home" = "Home";
+"settings" = "Settings";
