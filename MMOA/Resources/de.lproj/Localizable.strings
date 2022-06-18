@@ -14,6 +14,7 @@
 
 // MARK: - Error Views
 "noDataFound" = "Keine Elemente zum Anzeigen";
+"noDataDescription" = "Bitte versuchen Sie es mit einem anderen Schlüsselwort";
 "youAreOffline" = "Sie sind offline";
 "pleaseCheckYourInternetConnections" = "Bitte überprüfen Sie Ihre Internetverbindung";
 "serverError" = "Serverfehler";
@@ -22,7 +23,6 @@
 "unableToLoadThePageServerSentNoData" = "Server hat keine Daten gesendet";
 "notAuthorized" = "Nicht autorisiert";
 "youAreNotAuthorized" = "Sie sind nicht berechtigt, auf diese Seite zuzugreifen";
-
 
 // MARK: Language Selection
 "pleaseChooseLanguage" = "Bitte wählen Sie Ihre gewünschte Sprache";
@@ -33,6 +33,7 @@
 "home" = "Home";
 "settings" = "Einstellungen";
 
-
+// MARK: Home
+"departments" = "Abteilungen";
 
 

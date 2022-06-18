@@ -7,8 +7,6 @@
 
 import Foundation
 
-let kApiKey = "c66b1ca9a2f132321af246e72180f14d"
-
 let kAppEnvironment: AppEnvironment = .development
 
 // MARK: - kBaseURLComponents
@@ -30,30 +28,21 @@ var kBaseURL: String {
 // MARK: - kScheme
 var kScheme: String {
     switch kAppEnvironment {
-    case .development:  return "https"
-    case .staging:      return "http"
-    case .testing:      return "http"
-    case .live:         return "https"
+    default: return "https"
     }
 }
 
 // MARK: - kHost
 var kHost: String {
     switch kAppEnvironment {
-    case .development:  return "api.openweathermap.org"
-    case .staging:      return ""
-    case .testing:      return ""
-    case .live:         return ""
+    default: return "collectionapi.metmuseum.org"
     }
 }
 
 // MARK: - kPort
 var kPort: Int? {
     switch kAppEnvironment {
-    case .development:  return nil
-    case .staging:      return nil
-    case .testing:      return nil
-    case .live:         return nil
+    default: return nil
     }
 }
 

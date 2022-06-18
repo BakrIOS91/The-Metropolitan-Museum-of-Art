@@ -18,59 +18,57 @@ extension Baseview {
     var cancellables: Set<AnyCancellable> {
         return []
     }
+    
+    func fetchData(){}
 }
 
 
-extension Baseview {
-    @ViewBuilder
-    func statusView(viewState: ViewState) -> some View {
-        let emptyImage = Image("")
+struct BaseContentView<Content: View>: View, Baseview {
+    private var viewState: ViewState
+    let content: Content
+    
+    private let emptyImage = Image("")
+    
+    init(_ viewState: ViewState, @ViewBuilder content: () -> Content) {
+        self.viewState = viewState
+        self.content = content()
+    }
+    
+    var body : some View {
         switch viewState {
         case .loaded:
-            AnyView(EmptyView())
+            content
+            
         case .loading:
-            AnyView(
-                LoaderView()
-            )
+            LoaderView()
+                
         case .overlayLoading(let overlayColor):
-            AnyView(
-                LoaderView(viewBackgroundColor: overlayColor)
-            )
-        case .overlayLoadingWithMessage(let overlayColor,let message):
-            AnyView(
-                LoaderView(viewBackgroundColor: overlayColor, messageTitle: message)
-            )
+            LoaderView(viewBackgroundColor: overlayColor)
+                
+            
+        case .overlayLoadingWithMessage(let overlayColor, let message):
+            LoaderView(viewBackgroundColor: overlayColor, messageTitle: message)
+                
+            
         case .noData(let description):
-            AnyView(
-                ErrorView(statusImage: R.image.nodataError()?.suImage ?? emptyImage, statusTitle: R.string.localizable.noDataFound(), statusDescription: description,mainButtonTitle: R.string.localizable.retry(), mainButtonAction: fetchData)
-            )
+            ErrorView(statusImage: R.image.nodataError()?.suImage ?? emptyImage, statusTitle: R.string.localizable.noDataFound(), statusDescription: description,mainButtonTitle: R.string.localizable.retry(), mainButtonAction: fetchData)
             
         case .offline(let description):
-            AnyView(
-                ErrorView(statusImage: R.image.noNetworkErr()?.suImage ?? emptyImage, statusTitle: R.string.localizable.youAreOffline(), statusDescription: description,mainButtonTitle: R.string.localizable.retry(), mainButtonAction: fetchData)
-            )
+            ErrorView(statusImage: R.image.noNetworkErr()?.suImage ?? emptyImage, statusTitle: R.string.localizable.youAreOffline(), statusDescription: description,mainButtonTitle: R.string.localizable.retry(), mainButtonAction: fetchData)
             
         case .serverError(let description):
-            AnyView(
-                ErrorView(statusImage: R.image.server()?.suImage ?? emptyImage, statusTitle: R.string.localizable.serverError(), statusDescription: description,mainButtonTitle: R.string.localizable.retry(), mainButtonAction: fetchData)
-            )
+            ErrorView(statusImage: R.image.server()?.suImage ?? emptyImage, statusTitle: R.string.localizable.serverError(), statusDescription: description,mainButtonTitle: R.string.localizable.retry(), mainButtonAction: fetchData)
             
         case .unexpected(let description):
-            AnyView(
-                ErrorView(statusImage: R.image.server()?.suImage ?? emptyImage, statusTitle: R.string.localizable.unexpectedError(), statusDescription: description,mainButtonTitle: R.string.localizable.retry(), mainButtonAction: fetchData)
-            )
+            ErrorView(statusImage: R.image.server()?.suImage ?? emptyImage, statusTitle: R.string.localizable.unexpectedError(), statusDescription: description,mainButtonTitle: R.string.localizable.retry(), mainButtonAction: fetchData)
             
-        case .custom(let icon, let title, let description,let retryable):
-            if retryable{
-                AnyView(
-                    ErrorView(statusImage: icon, statusTitle: title, statusDescription: description,mainButtonTitle: R.string.localizable.retry(), mainButtonAction: fetchData)
-                )
-            }else{
-                AnyView(
-                    ErrorView(statusImage: icon, statusTitle: title, statusDescription: description)
-                )
+        case .custom(let icon, let title, let description, let retryable):
+            if retryable {
+                ErrorView(statusImage: icon, statusTitle: title, statusDescription: description,mainButtonTitle: R.string.localizable.retry(), mainButtonAction: fetchData)
+            } else {
+                ErrorView(statusImage: icon, statusTitle: title, statusDescription: description)
             }
+            
         }
     }
 }
-

@@ -14,6 +14,7 @@
 
 // MARK: - Error Views
 "noDataFound" = "No items to display";
+"noDataDescription" = "Please try different keyword";
 "youAreOffline" = "You are offline";
 "pleaseCheckYourInternetConnections" = "Please check your internet connection";
 "serverError" = "Server error";
@@ -24,13 +25,14 @@
 "notAuthorized" = "Not authorized";
 "youAreNotAuthorized" = "You are not authorized to access this page";
 
-
 // MARK: Language Selection
 "pleaseChooseLanguage" = "Please choose your desired language";
 "en" = "English";
 "de" = "Deutsch";
 
-
 // MARK: Tab Bar
 "home" = "Home";
 "settings" = "Settings";
+
+// MARK: Home
+"departments" = "Departments";

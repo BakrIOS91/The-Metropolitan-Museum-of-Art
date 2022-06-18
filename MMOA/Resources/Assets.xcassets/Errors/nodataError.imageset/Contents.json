@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "nodataError.png",
+      "filename" : "server.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "nodataError@2x.png",
+      "filename" : "server@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "nodataError@3x.png",
+      "filename" : "server@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

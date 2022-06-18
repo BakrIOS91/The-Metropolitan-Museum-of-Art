@@ -53,6 +53,10 @@
 		3C8DB0C0285CDFC20067753C /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8DB0BF285CDFC20067753C /* TabBarView.swift */; };
 		3C8DB0C3285CF1040067753C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8DB0C2285CF1040067753C /* HomeView.swift */; };
 		3C8DB0C8285CF1330067753C /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8DB0C7285CF1330067753C /* SettingView.swift */; };
+		3C8DB0CD285D008A0067753C /* DepartmentsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8DB0CC285D008A0067753C /* DepartmentsList.swift */; };
+		3C8DB0CF285D00FC0067753C /* DepartmentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8DB0CE285D00FC0067753C /* DepartmentsRequest.swift */; };
+		3C8DB0D2285D01E70067753C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8DB0D1285D01E70067753C /* HomeViewModel.swift */; };
+		3CC4AB1C285E05960099D52F /* DepartmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC4AB1B285E05960099D52F /* DepartmentCell.swift */; };
 		BE0B9122818B6C639018A141 /* Pods_MMOA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392E93DBDAC58C42A81DF91A /* Pods_MMOA.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +113,10 @@
 		3C8DB0BF285CDFC20067753C /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		3C8DB0C2285CF1040067753C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3C8DB0C7285CF1330067753C /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		3C8DB0CC285D008A0067753C /* DepartmentsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsList.swift; sourceTree = "<group>"; };
+		3C8DB0CE285D00FC0067753C /* DepartmentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsRequest.swift; sourceTree = "<group>"; };
+		3C8DB0D1285D01E70067753C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3CC4AB1B285E05960099D52F /* DepartmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				3C8DB065285B29D10067753C /* Scenes */,
+				3C8DB0C9285D004D0067753C /* Models */,
 				3C8DB044285B29510067753C /* Utilities */,
 				3C8DB036285B28EA0067753C /* Resources */,
 				3C8DB035285B284C0067753C /* Network */,
@@ -187,6 +196,7 @@
 		3C8DB02B285B28370067753C /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				3C8DB0CE285D00FC0067753C /* DepartmentsRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -358,6 +368,7 @@
 		3C8DB0C1285CF0E20067753C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3C8DB0D0285D01D60067753C /* View Model */,
 				3C8DB0C6285CF1220067753C /* View */,
 			);
 			path = Home;
@@ -382,9 +393,34 @@
 		3C8DB0C6285CF1220067753C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3CC4AB1A285E05820099D52F /* View Components */,
 				3C8DB0C2285CF1040067753C /* HomeView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3C8DB0C9285D004D0067753C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3C8DB0CC285D008A0067753C /* DepartmentsList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3C8DB0D0285D01D60067753C /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				3C8DB0D1285D01E70067753C /* HomeViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		3CC4AB1A285E05820099D52F /* View Components */ = {
+			isa = PBXGroup;
+			children = (
+				3CC4AB1B285E05960099D52F /* DepartmentCell.swift */,
+			);
+			path = "View Components";
 			sourceTree = "<group>";
 		};
 		8BA7EE6B10BF6EFD1CBCA696 /* Pods */ = {
@@ -550,6 +586,7 @@
 				3C8DB0C0285CDFC20067753C /* TabBarView.swift in Sources */,
 				3C8DB0A3285BC3060067753C /* OptionalExtention.swift in Sources */,
 				3C8DB05C285B29510067753C /* UIColorExtension.swift in Sources */,
+				3CC4AB1C285E05960099D52F /* DepartmentCell.swift in Sources */,
 				3C8DB032285B28370067753C /* NetworkMonitor.swift in Sources */,
 				3C8DB05B285B29510067753C /* LoaderView.swift in Sources */,
 				3C8DB05D285B29510067753C /* ViewExtension.swift in Sources */,
@@ -559,6 +596,8 @@
 				3C8DB031285B28370067753C /* baseRespnse.swift in Sources */,
 				3C8DB02F285B28370067753C /* NetworkExtensions.swift in Sources */,
 				3C8DB02D285B28370067753C /* BaseRequest.swift in Sources */,
+				3C8DB0D2285D01E70067753C /* HomeViewModel.swift in Sources */,
+				3C8DB0CD285D008A0067753C /* DepartmentsList.swift in Sources */,
 				3C8DB0A5285BC38E0067753C /* LocalizedContentView.swift in Sources */,
 				3C8DB0C3285CF1040067753C /* HomeView.swift in Sources */,
 				3C8DB059285B29510067753C /* AppColors.swift in Sources */,
@@ -571,6 +610,7 @@
 				3C8DB05F285B29510067753C /* StringExtension.swift in Sources */,
 				3C8DB062285B29510067753C /* BaseViewModel.swift in Sources */,
 				3C8DB0AD285C6F650067753C /* PublisherObservableObject.swift in Sources */,
+				3C8DB0CF285D00FC0067753C /* DepartmentsRequest.swift in Sources */,
 				3C8DB05A285B29510067753C /* ErrorView.swift in Sources */,
 				3C8DB05E285B29510067753C /* UIImageExtention.swift in Sources */,
 				3C8DB0A9285BC81E0067753C /* PublisherExtension.swift in Sources */,

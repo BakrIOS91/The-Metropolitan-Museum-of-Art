@@ -84,3 +84,12 @@ struct ErrorView: View {
         }
     }
 }
+
+
+struct ErrorView_Previews: PreviewProvider {
+    static var previews: some View {
+        LocalePreview {
+            ErrorView(statusImage: R.image.server()?.suImage ?? Image(""), statusTitle: R.string.localizable.serverError(), statusDescription: "description",mainButtonTitle: R.string.localizable.retry(), mainButtonAction: {})
+        }
+    }
+}
