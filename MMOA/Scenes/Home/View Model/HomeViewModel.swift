@@ -21,26 +21,19 @@ class HomeViewModel: BaseViewModel {
     
     func fetchData(){
         guard self.isConnectedToInternet() else {
-            viewState = .offline(description: "Please check your internet connection")
+            viewState = .offline(description: R.string.localizable.pleaseCheckYourInternetConnections())
             return
         }
-        viewState = .loading
+        viewState = .overlayLoading(overlayColor: .appBackground)
         let apiFetcher = APIFetcher()
         let request = DepartmentRequest.getDepartmentsList
         apiFetcher.fetch(request: request, responseClass: DepartmentList.self)
-            .sink { [unowned self] comp in
-                switch comp {
-                case .finished:
-                    viewState = .loaded
-                case .failure(_):
-                    viewState = .serverError(description: "pleaseTryAgainLater")
-                }
-            } receiveValue: { [unowned self] depList in
+            .sink(receiveCompletion: failureHandle, receiveValue: { [unowned self] depList in
                 guard let list = depList.departments, !list.isEmpty else {
                     return viewState = .noData(description: "")
                 }
                 departments = list
-            }
+            })
             .store(in: &cancellables)
 
     }

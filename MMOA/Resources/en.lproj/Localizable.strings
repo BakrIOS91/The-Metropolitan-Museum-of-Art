@@ -34,5 +34,6 @@
 "home" = "Home";
 "settings" = "Settings";
 
-// MARK: Home
+// MARK: Views Titles
 "departments" = "Departments";
+"departmentDetails" = "Department Details";

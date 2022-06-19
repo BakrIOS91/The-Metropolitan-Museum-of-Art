@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct DepartmentCell: View {
-    var title: String = "Test"
+    var department: Department
+    
     var body: some View {
         NavigationLink {
-            Text(title)
+            DepartmentDetailsView(departmentId: department.departmentID ?? 1)
         } label: {
             ZStack(alignment: .leading) {
                 Color.cyan.opacity(0.4).ignoresSafeArea().cornerRadius(10)
                 HStack(spacing: 10){
-                    Text(title)
+                    Text(department.displayName ?? "")
                         .font(AppFont.mediumWithSize14)
                         .multilineTextAlignment(.leading)
     

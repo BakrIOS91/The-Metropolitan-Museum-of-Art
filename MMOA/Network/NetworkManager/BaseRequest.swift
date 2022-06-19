@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias Parameters = [String:String]
+typealias Parameters = [String:Any]
 typealias MultipartAttachment = (fileName: String, url: URL?, data: Data?)
 
 protocol BaseRequestProtocol {

@@ -33,7 +33,7 @@
 "home" = "Home";
 "settings" = "Einstellungen";
 
-// MARK: Home
+// MARK: Views Titles
 "departments" = "Abteilungen";
-
+"departmentDetails" = "Abteilungsdetails";
 

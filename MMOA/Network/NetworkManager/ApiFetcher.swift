@@ -36,7 +36,7 @@ public class APIFetcher: Fetcher {
                 Fail<ResponseType, NetworkError>(error: NetworkError.badURL("Invalid Url"))
             )
         }
-        
+        debugPrint(urlRequest)
         // We use the dataTaskPublisher from the URLSession which gives us a publisher to play around with.
         return URLSession.shared
             .dataTaskPublisher(for: urlRequest)
@@ -57,14 +57,11 @@ public class APIFetcher: Fetcher {
         switch request.httpMethod {
         case .GET:
             var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
-            var queryItems: [URLQueryItem] = []
-            if let params = request.parameters {
-                for (key, value) in params {
-                    queryItems.append(URLQueryItem(name: key, value: value))
+            if let params = request.parameters, !params.isEmpty {
+                urlComponents?.queryItems = params.map {
+                    URLQueryItem(name: $0.key, value: "\($0.value)")
                 }
-                
             }
-            urlComponents?.queryItems = queryItems
             urlRequest.url = urlComponents?.url ?? url
             
         default:

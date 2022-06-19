@@ -7,16 +7,12 @@
 
 import SwiftUI
 
-struct HomeView: View, Baseview {
+struct HomeView: View {
     @StateObject var viewModel: HomeViewModel = .init()
     @State private var searchText = ""
     
-    var cell: some View {
-        Text("Home")
-    }
-    
     var body: some View {
-        BaseContentView(viewModel.viewState, content: {
+        BaseContentView(viewModel.viewState, retryHandler: fetchData, content: {
             NavigationView {
                 ZStack{
                     Color.appBackground.ignoresSafeArea()
@@ -28,7 +24,7 @@ struct HomeView: View, Baseview {
                         ScrollView(.vertical){
                             VStack{
                                 ForEach(viewModel.filteredDepartment(name: searchText),id: \.departmentID){ dep in
-                                    DepartmentCell(title: dep.displayName ?? "")
+                                    DepartmentCell(department: dep)
                                         .foregroundColor(.black)
                                 }
                             }
