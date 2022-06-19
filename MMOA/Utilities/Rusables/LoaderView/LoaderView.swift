@@ -1,9 +1,6 @@
 //
 //  LoaderView.swift
-//  IHFEducationNSSU
-//
-//  Created by Bakr mohamed on 14/05/2022.
-//
+//  
 
 import SwiftUI
 

@@ -1,9 +1,6 @@
 //
 //  ErrorView.swift
-//  RedBullMobile-iOS
-//
-//  Created by Bakr mohamed on 18/05/2022.
-//
+//  
 
 import SwiftUI
 

@@ -1,9 +1,6 @@
 //
 //  ViewExtension.swift
-//  RedBullMobile-iOS
-//
-//  Created by Bakr mohamed on 17/05/2022.
-//
+//  
 
 import SwiftUI
 

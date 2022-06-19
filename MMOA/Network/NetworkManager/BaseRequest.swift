@@ -1,9 +1,6 @@
 //
 //  BaseRequest.swift
-//  MVVMCAppStructure
-//
-//  Created by Bakr mohamed on 03/04/2022.
-//
+//  
 
 import Foundation
 

@@ -1,9 +1,6 @@
 //
 //  NetworkExtensions.swift
-//  ReusableNetworkLayer
-//
-//  Created by Bakr mohamed on 21/03/2022.
-//
+//  
 
 import Foundation
 import Combine

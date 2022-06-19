@@ -1,9 +1,6 @@
 //
 //  ApiFetcher.swift
-//  ReusableNetworkLayer
-//
-//  Created by Bakr mohamed on 21/03/2022.
-//
+//  
 
 /*
     1- must be check preformance against alamofire (speed/processor/battery)

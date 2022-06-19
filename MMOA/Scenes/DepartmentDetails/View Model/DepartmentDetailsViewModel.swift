@@ -1,9 +1,6 @@
 //
 //  DepartmentDetailsViewModel.swift
-//  MMOA
-//
-//  Created by Bakr mohamed on 18/06/2022.
-//
+// 
 
 import Combine
 

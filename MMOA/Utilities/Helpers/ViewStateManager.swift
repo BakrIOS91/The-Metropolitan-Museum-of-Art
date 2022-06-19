@@ -1,9 +1,6 @@
 //
 //  ViewStateManager.swift
-//  RedBullMobile-iOS
-//
-//  Created by Bakr mohamed on 20/05/2022.
-//
+//  
 
 import SwiftUI
 enum ViewState: Equatable {
