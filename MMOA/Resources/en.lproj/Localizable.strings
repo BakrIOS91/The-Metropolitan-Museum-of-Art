@@ -37,3 +37,9 @@
 // MARK: Views Titles
 "departments" = "Departments";
 "departmentDetails" = "Department Details";
+
+// Mark: Object Details
+"obj_Name" = "Name: %@";
+"obj_Department" = "Department: %@";
+"obj_Artist" = "Artist: %@";
+"obj_City" = "City: %@";

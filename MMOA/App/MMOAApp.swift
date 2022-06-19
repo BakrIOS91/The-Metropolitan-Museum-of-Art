@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import netfox
 
 @main
 struct MMOAApp: App {
@@ -13,6 +14,7 @@ struct MMOAApp: App {
 
     
     init(){
+        NFX.sharedInstance().start() // for testing only should be removed in live version
         NetworkMonitor.shared.startMonitoring()
         self.locale = Locale(identifier: Bundle.main.preferredLocalizations.first ?? "en")
     }

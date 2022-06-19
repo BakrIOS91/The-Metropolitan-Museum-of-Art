@@ -8,7 +8,8 @@ target 'MMOA' do
 
   # 1-  Easy to access Resources
   pod 'R.swift'
-
   
+  # 3- Network Request Monitor
+  pod 'netfox'
 
 end

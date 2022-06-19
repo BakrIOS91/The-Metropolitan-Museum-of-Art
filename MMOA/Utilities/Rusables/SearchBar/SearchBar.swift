@@ -32,6 +32,7 @@ struct SearchBar: View {
                     }
                 }
             }
+            .disableAutocorrection(true)
             .foregroundColor(.gray)
             .padding(.leading, 13)
         }

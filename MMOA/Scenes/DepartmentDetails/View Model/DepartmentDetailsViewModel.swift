@@ -16,7 +16,7 @@ class DepartmentDetailsViewModel: BaseViewModel {
     
     func fetchData(departmentID: Int, searchText: String){
         guard self.isConnectedToInternet() else {
-            viewState = .offline(description: "Please check your internet connection")
+            viewState = .offline(description: R.string.localizable.pleaseCheckYourInternetConnections())
             return
         }
         viewState = .overlayLoading(overlayColor: .appBackground)

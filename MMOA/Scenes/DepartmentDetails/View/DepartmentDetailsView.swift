@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DepartmentDetailsView: View {
     @StateObject var viewModel: DepartmentDetailsViewModel = .init()
+    @State private var onApearCalled: Bool = false
     @State private var searchText = ""
     @State var searching = false
 
@@ -36,7 +37,7 @@ struct DepartmentDetailsView: View {
                             LazyVGrid(columns: layout, spacing: 20){
                                 ForEach(viewModel.objectList,id: \.self){ id in
                                     NavigationLink {
-                                        Text("\(id)")
+                                        ObjectDetailsView(objectID: id)
                                     } label: {
                                         Text("\(id)")
                                             .frame(height: 40)
@@ -58,7 +59,10 @@ struct DepartmentDetailsView: View {
         .navigationTitle(Text("departmentDetails"))
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
-            fetchData()
+            if !onApearCalled {
+                fetchData()
+                onApearCalled.toggle()
+            }
         }
         
     }

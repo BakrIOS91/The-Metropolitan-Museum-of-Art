@@ -37,3 +37,8 @@
 "departments" = "Abteilungen";
 "departmentDetails" = "Abteilungsdetails";
 
+// Mark: Object Details
+"obj_Name" = "Name: %@";
+"obj_Department" = "Abteilung: %@";
+"obj_Artist" = "Künstlerin: %@";
+"obj_City" = "Stadt: %@";

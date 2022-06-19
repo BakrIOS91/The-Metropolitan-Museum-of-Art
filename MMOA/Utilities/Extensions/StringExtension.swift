@@ -20,4 +20,16 @@ extension String {
     mutating func capitalizeFirstLetter() {
         self = self.capitalizingFirstLetter()
     }
+    
+    func toURL() -> URL? {
+        return URL(string: self)
+    }
+    
+    func replaceEmpty() -> String {
+        if self.isEmpty {
+            return "N/A"
+        }
+        
+        return self
+    }
 }
