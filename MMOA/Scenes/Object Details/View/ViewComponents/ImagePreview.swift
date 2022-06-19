@@ -29,8 +29,9 @@ struct ImagePreview: View {
                         .renderingMode(.original)
                         .resizable()
                         .overlay {
-                            LoaderView()
+                            ProgressView()
                                 .isHidden(shouldHideLoader, remove: true)
+
                         }
                 }
     }
