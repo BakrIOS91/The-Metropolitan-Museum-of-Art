@@ -38,8 +38,12 @@
 "departments" = "Departments";
 "departmentDetails" = "Department Details";
 
-// Mark: Object Details
+// MARK: Object Details
 "obj_Name" = "Name: %@";
 "obj_Department" = "Department: %@";
 "obj_Artist" = "Artist: %@";
 "obj_City" = "City: %@";
+
+
+// MARK: Setting
+"language" = "Language";

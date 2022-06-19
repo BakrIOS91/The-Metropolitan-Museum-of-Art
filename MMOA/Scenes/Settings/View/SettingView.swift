@@ -8,13 +8,39 @@
 import SwiftUI
 
 struct SettingView: View {
+    @Preference(\.locale) var locale
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text("settings")
+                .font(AppFont.boldWithSize20)
+                .padding()
+            Divider()
+            
+            Button(action: {
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+            }, label: {
+                HStack{
+                    Text("language")
+                    Spacer()
+                    HStack{
+                        Text("\(locale?.languageCode ?? "")".localizedStringKey)
+                        Image(systemName: "chevron.forward")
+                    }
+                }
+            })
+            .foregroundColor(.black)
+            .padding()
+            Spacer()
+        }
+        .padding()
     }
 }
 
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingView()
+        LocalePreview{
+            SettingView()
+        }
     }
 }
