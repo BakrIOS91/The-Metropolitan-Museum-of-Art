@@ -10,6 +10,8 @@ struct SearchBar: View {
     @Binding var placeHolder: String
     var onComit: (() -> Void)?
     
+    @State private var showClearButton: Bool = false
+    
     var body: some View {
         ZStack {
             Rectangle()
@@ -19,15 +21,28 @@ struct SearchBar: View {
                 TextField(placeHolder, text: $searchText) { startedEditing in
                     if startedEditing {
                         withAnimation {
+                            showClearButton.toggle()
                             searching = true
                         }
                     }
                 } onCommit: {
-                    onComit?()
+                    if !searchText.isEmpty {
+                        onComit?()
+                    }
                     withAnimation {
                         searching = false
+                        showClearButton.toggle()
                     }
                 }
+                
+                Button {
+                    searchText = ""
+                } label: {
+                    Image(systemName: "clear.fill")
+                }
+                .padding(.horizontal, 6)
+                .isHidden(!showClearButton, remove: false)
+
             }
             .disableAutocorrection(true)
             .foregroundColor(.gray)
