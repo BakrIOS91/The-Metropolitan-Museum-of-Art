@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C52A371285F5ABE00E50CE7 /* AsyncImageBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C52A370285F5ABE00E50CE7 /* AsyncImageBinder.swift */; };
+		3C52A39B2860B21700E50CE7 /* PinshZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C52A39A2860B21700E50CE7 /* PinshZoom.swift */; };
 		3C8DB016285B27C60067753C /* MMOAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8DB015285B27C60067753C /* MMOAApp.swift */; };
 		3C8DB01D285B27C80067753C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C8DB01C285B27C80067753C /* Preview Assets.xcassets */; };
 		3C8DB02D285B28370067753C /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8DB024285B28370067753C /* BaseRequest.swift */; };
@@ -75,6 +76,7 @@
 		222C58D91D582AA02357D616 /* Pods-MMOA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMOA.release.xcconfig"; path = "Target Support Files/Pods-MMOA/Pods-MMOA.release.xcconfig"; sourceTree = "<group>"; };
 		392E93DBDAC58C42A81DF91A /* Pods_MMOA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MMOA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C52A370285F5ABE00E50CE7 /* AsyncImageBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageBinder.swift; sourceTree = "<group>"; };
+		3C52A39A2860B21700E50CE7 /* PinshZoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinshZoom.swift; sourceTree = "<group>"; };
 		3C8DB012285B27C60067753C /* MMOA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMOA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C8DB015285B27C60067753C /* MMOAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMOAApp.swift; sourceTree = "<group>"; };
 		3C8DB01C285B27C80067753C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				3C8DB0AA285BC9230067753C /* Helper.swift */,
 				3C8DB0AC285C6F650067753C /* PublisherObservableObject.swift */,
 				3C8DB0AE285C6FB30067753C /* UserDefaults.swift */,
+				3C52A39A2860B21700E50CE7 /* PinshZoom.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -682,6 +685,7 @@
 				3C8DB030285B28370067753C /* ApiFetcher.swift in Sources */,
 				3C8DB0C0285CDFC20067753C /* TabBarView.swift in Sources */,
 				3C52A371285F5ABE00E50CE7 /* AsyncImageBinder.swift in Sources */,
+				3C52A39B2860B21700E50CE7 /* PinshZoom.swift in Sources */,
 				3C8DB0A3285BC3060067753C /* OptionalExtention.swift in Sources */,
 				3C8DB05C285B29510067753C /* UIColorExtension.swift in Sources */,
 				3CC4AB1C285E05960099D52F /* DepartmentCell.swift in Sources */,

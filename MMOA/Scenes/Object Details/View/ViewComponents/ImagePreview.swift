@@ -9,6 +9,8 @@ struct ImagePreview: View {
     @State var shouldHideLoader: Bool = false
     private var imagePlaceHolder: Image
     
+    @State var previewImage: Bool = false
+    
     init(imageUrlString: String, placeHolder: Image){
         self.shouldHideLoader = imageUrlString.isEmpty
         self.imagePlaceHolder = placeHolder
@@ -18,12 +20,17 @@ struct ImagePreview: View {
     
     var body: some View {
                 if binder.image != nil {
-                    NavigationLink {
-                        renderedImage()
-                    } label: {
-                        renderedImage()
-                    }
-                    
+                    renderedImage()
+                        .onTapGesture {
+                            previewImage.toggle()
+                        }
+                        .sheet(isPresented: $previewImage) {
+                            previewImage = false
+                        } content: {
+                            renderedImage()
+                                .ignoresSafeArea()
+                                .pinchToZoom()
+                        }
                 } else {
                     imagePlaceHolder
                         .renderingMode(.original)
@@ -34,6 +41,8 @@ struct ImagePreview: View {
 
                         }
                 }
+            
+
     }
     
     func renderedImage() -> Image {
