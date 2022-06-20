@@ -30,19 +30,29 @@ struct DepartmentDetailsView: View {
                                     .ignoresSafeArea()
                             }else{
                                 ScrollView(.vertical){
-                                    LazyVGrid(columns: layout, spacing: 20){
-                                        ForEach(viewModel.objectList,id: \.self){ id in
-                                            NavigationLink {
-                                                ObjectDetailsView(objectID: id)
-                                            } label: {
-                                                Text("\(id)")
-                                                    .frame(height: 40)
-                                                    .font(AppFont.boldWithSize12)
-                                                    .padding()
-                                                    .background(Color.blue.opacity(0.4))
-                                                    .cornerRadius(5)
+                                    VStack(spacing: 20) {
+                                        LazyVGrid(columns: layout, spacing: 20){
+                                            ForEach(viewModel.objectList,id: \.self){ id in
+                                                NavigationLink {
+                                                    ObjectDetailsView(objectID: id)
+                                                } label: {
+                                                    Text("\(id)")
+                                                        .frame(height: 40)
+                                                        .font(AppFont.boldWithSize12)
+                                                        .padding()
+                                                        .background(Color.blue.opacity(0.4))
+                                                        .cornerRadius(5)
+                                                }
                                             }
                                         }
+                                        
+                                        Button {
+                                            viewModel.loadMore()
+                                        } label: {
+                                            Text("loadMore")
+                                        }
+                                        .isHidden(viewModel.hideLoadMore, remove: false)
+
                                     }
                                 }
                             }

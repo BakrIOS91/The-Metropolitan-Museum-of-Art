@@ -8,6 +8,7 @@
 "to" = "zu";
 "mmoa" = "Metropolitan Museum of Art";
 "retry" = "Wiederholen";
+"loadMore" = "Mehr Laden";
 
 // MARK: - Error Views
 "noDataFound" = "Keine Elemente zum Anzeigen";
