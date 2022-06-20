@@ -10,13 +10,19 @@ class DepartmentDetailsViewModel: BaseViewModel {
     @Published var viewState: ViewState = .loaded
     
     @Published var objectList : [Int] = []
-    
+    @Published var isInistialData: Bool = true
+    @Published var canRefresh: Bool = false
+
     func fetchData(departmentID: Int, searchText: String){
+        canRefresh = false
         guard self.isConnectedToInternet() else {
             viewState = .offline(description: R.string.localizable.pleaseCheckYourInternetConnections())
             return
         }
-        viewState = .overlayLoading(overlayColor: .appBackground)
+        if !canRefresh {
+            viewState = .overlayLoading(overlayColor: .clear)
+        }
+        
         let apiFetcher = APIFetcher()
         let request = DepartmentRequest.getDepartmentDetails(id: departmentID, searchText: searchText.isEmpty ? "\"\"" : searchText)
         apiFetcher.fetch(request: request, responseClass: DepartmentDetails.self)
@@ -25,9 +31,11 @@ class DepartmentDetailsViewModel: BaseViewModel {
                 if let objIds = details.objectIDs, !objIds.isEmpty {
                     debugPrint(objIds.count)
                     objectList = objIds
+                    canRefresh = true
                 }else{
                     viewState = .noData(description: "")
                 }
+                isInistialData = false
             }
             .store(in: &cancellables)
         
