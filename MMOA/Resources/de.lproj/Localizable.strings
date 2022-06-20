@@ -21,6 +21,7 @@
 "unableToLoadThePageServerSentNoData" = "Server hat keine Daten gesendet";
 "notAuthorized" = "Nicht autorisiert";
 "youAreNotAuthorized" = "Sie sind nicht berechtigt, auf diese Seite zuzugreifen";
+"searchPlaceHolder" = "ein. Sonnenblume";
 
 // MARK: Language Selection
 "pleaseChooseLanguage" = "Bitte wählen Sie Ihre gewünschte Sprache";
@@ -34,6 +35,10 @@
 // MARK: Views Titles
 "departments" = "Abteilungen";
 "departmentDetails" = "Abteilungsdetails";
+
+// Mark: Department Details
+"screenMessage" = "Bitte geben Sie das Stichwort ein. Sonnenblume";
+
 
 // MARK: Object Details
 "obj_Name" = "Name: %@";

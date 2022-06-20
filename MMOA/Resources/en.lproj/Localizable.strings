@@ -22,6 +22,7 @@
 "retry" = "Retry";
 "notAuthorized" = "Not authorized";
 "youAreNotAuthorized" = "You are not authorized to access this page";
+"searchPlaceHolder" = "Ex. Sunflower";
 
 // MARK: Language Selection
 "pleaseChooseLanguage" = "Please choose your desired language";
@@ -35,6 +36,9 @@
 // MARK: Views Titles
 "departments" = "Departments";
 "departmentDetails" = "Department Details";
+
+// Mark: Department Details
+"screenMessage" = "Please enter keyword Ex. Sunflower";
 
 // MARK: Object Details
 "obj_Name" = "Name: %@";
