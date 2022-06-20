@@ -11,21 +11,13 @@ struct DepartmentCell: View {
         NavigationLink {
             DepartmentDetailsView(departmentId: department.departmentID ?? 1)
         } label: {
-            ZStack(alignment: .leading) {
-                Color.cyan.opacity(0.4).ignoresSafeArea().cornerRadius(10)
-                HStack(spacing: 10){
-                    Text(department.displayName ?? "")
-                        .font(AppFont.mediumWithSize14)
-                        .multilineTextAlignment(.leading)
-    
-                    Spacer()
-                    
-                    Image(systemName: "chevron.forward")
-                }
-                .padding()
-            }
+            Text(department.displayName ?? "")
+                .font(AppFont.mediumWithSize16)
+                .multilineTextAlignment(.leading)
         }
-        .padding(.horizontal, 20)
+        .padding()
+        .listRowBackground(Color.clear)
+        .listRowSeparator(.hidden)
         
     }
 }

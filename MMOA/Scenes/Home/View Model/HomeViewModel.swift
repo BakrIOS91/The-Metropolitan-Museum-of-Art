@@ -9,9 +9,8 @@ class HomeViewModel: BaseViewModel {
     private var cancellables = Set<AnyCancellable>()
 
     @Published var viewState: ViewState = .loaded
-    
     @Published var departments : [Department] = []
-    
+    @Published var isInistialData: Bool = true
     init(){
         fetchData()
     }
@@ -21,15 +20,17 @@ class HomeViewModel: BaseViewModel {
             viewState = .offline(description: R.string.localizable.pleaseCheckYourInternetConnections())
             return
         }
-        viewState = .overlayLoading(overlayColor: .appBackground)
+        viewState = .loading
         let apiFetcher = APIFetcher()
         let request = DepartmentRequest.getDepartmentsList
         apiFetcher.fetch(request: request, responseClass: DepartmentList.self)
             .sink(receiveCompletion: failureHandle, receiveValue: { [unowned self] depList in
                 guard let list = depList.departments, !list.isEmpty else {
+                    isInistialData = false
                     return viewState = .noData(description: "")
                 }
                 departments = list
+                isInistialData = false
             })
             .store(in: &cancellables)
 

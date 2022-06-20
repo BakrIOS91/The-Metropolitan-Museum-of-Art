@@ -14,19 +14,20 @@ struct HomeView: View {
                 ZStack{
                     Color.appBackground.ignoresSafeArea()
                     
-                    if viewModel.filteredDepartment(name: searchText).isEmpty {
+                    if viewModel.filteredDepartment(name: searchText).isEmpty, !viewModel.isInistialData {
                         ErrorView(statusImage: R.image.nodataError()?.suImage ?? Image(""), statusTitle: R.string.localizable.noDataFound(), statusDescription: R.string.localizable.noDataDescription())
                             .ignoresSafeArea()
                     }else{
-                        ScrollView(.vertical){
-                            VStack{
-                                ForEach(viewModel.filteredDepartment(name: searchText),id: \.departmentID){ dep in
-                                    DepartmentCell(department: dep)
-                                        .foregroundColor(.black)
-                                }
+                        List {
+                            ForEach(viewModel.filteredDepartment(name: searchText),id: \.departmentID){ dep in
+                                DepartmentCell(department: dep)
+                                    .foregroundColor(.black)
+                                    .background(Rectangle().fill(.blue.opacity(0.4)).cornerRadius(10))
                             }
-                            .padding(.vertical, 10)
-
+                        }
+                        .listStyle(.plain)
+                        .refreshable {
+                            fetchData()
                         }
                     }
                 }
