@@ -43,7 +43,7 @@ struct DepartmentDetailsView: View {
                                                     ObjectDetailsView(objectID: id)
                                                 } label: {
                                                     Text("\(id)")
-                                                        .frame(height: 40)
+                                                        .frame(width: 50,height: 50)
                                                         .font(AppFont.boldWithSize12)
                                                         .padding()
                                                         .background(Color.blue.opacity(0.4))
@@ -57,6 +57,7 @@ struct DepartmentDetailsView: View {
                                         } label: {
                                             Text("loadMore")
                                         }
+                                        .font(AppFont.regularWithSize12)
                                         .isHidden(viewModel.hideLoadMore, remove: false)
                                         
                                     }
